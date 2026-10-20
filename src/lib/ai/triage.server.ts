@@ -30,7 +30,7 @@ category: 2-4 words. summary: one sentence. rationale: one sentence on why this 
 export async function analyzeTicketServer(ticket: Ticket): Promise<
   { ok: true; analysis: Analysis } | { ok: false; message: string }
 > {
-  const apiKey = process.env.LOVABLE_API_KEY;
+  const apiKey = process.env["LOVABLE_API_KEY"];
   if (!apiKey) return { ok: false, message: "AI is not configured for this app." };
 
   const runIdFetch = createLovableAiGatewayRunIdFetch();
