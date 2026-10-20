@@ -21,7 +21,13 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
-type Entry = { state: TicketState; analysis?: Analysis; reply?: string; team?: Team; error?: string };
+type Entry = {
+  state: TicketState;
+  analysis?: Analysis | undefined;
+  reply?: string | undefined;
+  team?: Team | undefined;
+  error?: string | undefined;
+};
 
 const PRIORITY_STYLE: Record<Ticket["priority"], string> = {
   P1: "bg-destructive text-destructive-foreground",
