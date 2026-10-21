@@ -12,9 +12,9 @@ import { cn } from "@/lib/utils";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Triage Agent — ServiceNow AI Support" },
-      { name: "description", content: "Reads ServiceNow tickets, drafts replies for routine ones and outlines solutions for complex ones." },
-      { property: "og:title", content: "Triage Agent — ServiceNow AI Support" },
+      { title: "DASH — Data Automation Support Hub" },
+      { name: "description", content: "DASH reads ServiceNow tickets, drafts replies for routine ones and outlines solutions for complex ones." },
+      { property: "og:title", content: "DASH — Data Automation Support Hub" },
       { property: "og:description", content: "AI ticket triage routed to Clinical Applications, Data Enablement, and App Development & Access." },
     ],
   }),
@@ -52,7 +52,7 @@ function Index() {
       if (res.ok) patch(t.id, { state: "ready", analysis: res.analysis, reply: res.analysis.draftReply, team: res.analysis.team });
       else patch(t.id, { state: "new", error: res.message });
     } catch {
-      patch(t.id, { state: "new", error: "Couldn't reach the agent. Try again." });
+      patch(t.id, { state: "new", error: "Couldn't reach DASH. Try again." });
     }
   };
 
@@ -73,8 +73,8 @@ function Index() {
               <Bot className="size-5" />
             </div>
             <div>
-              <h1 className="text-lg font-semibold tracking-tight">Triage Agent</h1>
-              <p className="font-mono text-xs opacity-70">ServiceNow · Analytics Support Queue</p>
+              <h1 className="text-lg font-semibold tracking-tight">DASH</h1>
+              <p className="font-mono text-xs opacity-70">Data Automation Support Hub · ServiceNow queue</p>
             </div>
           </div>
           <div className="flex items-center gap-5 font-mono text-xs">
@@ -137,7 +137,7 @@ function Index() {
             <div className="grid h-full min-h-80 place-items-center rounded-lg border border-dashed text-center text-muted-foreground">
               <div>
                 <Bot className="mx-auto mb-3 size-8" />
-                <p>Pick a ticket and the agent will read it.</p>
+                <p>Pick a ticket and DASH will read it.</p>
               </div>
             </div>
           )}
@@ -204,7 +204,7 @@ function Detail({
       {entry.state === "analyzing" && (
         <div className="relative overflow-hidden rounded-lg border bg-card p-5">
           <span className="scan-bar absolute inset-x-0 top-0 h-0.5 w-1/3 bg-accent" />
-          <p className="flex items-center gap-2 text-muted-foreground"><Bot className="size-4" /> Agent is reading the ticket…</p>
+          <p className="flex items-center gap-2 text-muted-foreground"><Bot className="size-4" /> DASH is reading the ticket…</p>
         </div>
       )}
 
