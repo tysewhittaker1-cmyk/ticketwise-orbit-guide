@@ -78,8 +78,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Triage Agent — ServiceNow AI Support" },
-      { name: "description", content: "AI agent that resolves routine tickets and routes complex ones." },
+      { title: "DASH — Data Automation Support Hub" },
+      { name: "description", content: "DASH reads routine and complex ServiceNow tickets, drafts replies and routes them to the right analytics team." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
